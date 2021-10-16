@@ -1,6 +1,6 @@
-# tmp files
-[.]*.t[e]mp
-[.]*[.]swp
-[.]~[$]*
-[.]*.bak
-[.]*~
+# Temporary files
+*.bak
+*.temp
+*.tmp
+*[.-]swp
+*~*
