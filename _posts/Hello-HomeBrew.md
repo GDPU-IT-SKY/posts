@@ -12,7 +12,7 @@ tags: macOS
 
 ### 安装 Homebrew _- 此处以 `macOS` 为例_
 
-1. 使用安装脚本 _- 由于地理位置, 此处使用 `jsDelivr CDN` 以下载._
+1. 使用安装脚本 _- 由于地理位置, 此处使用 `jsDelivr CDN` 以加速下载._
 
    ``` shell
    /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/Homebrew/install@HEAD/install.sh)"
