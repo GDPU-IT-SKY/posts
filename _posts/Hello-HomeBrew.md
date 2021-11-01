@@ -2,7 +2,7 @@
 title: Homebrew 入门教程
 date: 2021-10-31 23:09:07
 author: Supdrewin
-hidden: false
+hidden: true
 tags: macOS
 ---
 
@@ -14,25 +14,30 @@ tags: macOS
 
 1. 使用安装脚本 _- 由于地理位置, 此处使用 `jsDelivr CDN` 以加速下载._
 
+   提前配置相关环境变量, 参照 `配置安装源` 的第一步.
+
    ``` shell
    /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/Homebrew/install@HEAD/install.sh)"
    ```
-2. 设置远程上游 _- 将远程上游设置为 `科大源`, 以获得良好的网速体验._
 
-   一般情况下 `macOS` 的 `默认 Shell` 为 `zsh`, 所以我们将环境变量写入 `zsh` 的用户配置文件.
+2. 配置镜像安装源 _- 将远程上游设置为 `科大源`, 以获得良好的网速体验._
 
-   ``` shell
-   echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zshrc
-   echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zshrc
-   echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zshrc
-   ```
+   1. 一般情况下 `macOS` 的 `默认 Shell` 为 `zsh`, 所以我们将环境变量写入 `zsh` 的用户配置文件.
 
-   以下设置大型二进制包 _(或 `macOS` 应用)_ 的远程.
+      _此步骤推荐在使用脚本安装 `brew` 前做, 以免在克隆时卡住._
 
-   ``` shell
-   brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
-   brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git
-   ```
+      ``` shell
+      echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zshrc
+      echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zshrc
+      echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zshrc
+      ```
+
+   2. 以下设置大型二进制包 _(或 `macOS` 应用)_ 的远程.
+
+      ``` shell
+      brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
+      brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git
+      ```
 
 3. 更新源列表
    ``` shell
